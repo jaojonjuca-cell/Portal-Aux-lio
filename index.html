@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Saúde - Central de Cidadania</title>
+    
+    <!-- conexão com o arquivo CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Central de Cidadania</h1>
+        <p>Portal de Saúde e Bem-Estar Comunitário de Pernambués</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="tab-container">
+            <div class="tab-menu">
+                <button class="tab-button active" onclick="abrirAba(event, 'GuiaAtendimento')">Onde e Como Marcar</button>
+                <button class="tab-button" onclick="abrirAba(event, 'SaudeMulherHomem')">Saúde da Mulher/Homem</button>
+                <button class="tab-button" onclick="abrirAba(event, 'SaudeMental')">Saúde Mental</button>
+                <button class="tab-button" onclick="abrirAba(event, 'CriancasIdosos')">Crianças e Idosos</button>
+            </div>
+
+            <!-- onde e como marcar -->
+            <div id="GuiaAtendimento" class="tab-content" style="display: block;">
+                <h2 class="secao-titulo">Unidades Locais e Agendamento</h2>
+                <p>Veja os locais de atendimento em Pernambués e acompanhe os guias para facilitar o seu acesso aos serviços do SUS.</p>
+                
+                <h3 class="subtitulo" style="margin-top: 1.5rem;">Guias de Marcação e Aplicativos</h3>
+                
+                <div class="sub-tab-menu">
+                    <button class="sub-tab-button active" onclick="abrirSubAba(event, 'GuiaPresencial')">🚶 Presencial</button>
+                    <button class="sub-tab-button" onclick="abrirSubAba(event, 'GuiaSalDigital')">📲 Salvador Digital</button>
+                    <button class="sub-tab-button" onclick="abrirSubAba(event, 'GuiaVidaCidadao')">➕ Vida+ Cidadão</button>
+                    <button class="sub-tab-button" onclick="abrirSubAba(event, 'GuiaConecteSUS')">🏥 Meu SUS Digital</button>
+                </div>
+
+                <div id="GuiaPresencial" class="sub-tab-content passo-a-passo" style="display: block; border-top: 4px solid var(--laranja);">
+                    <h3 style="color: var(--laranja); margin-bottom: 15px;">Marcação Presencial (No Posto)</h3>
+                    <div class="passo-item"><div class="passo-numero">1</div><div class="passo-conteudo"><h4>Separe seus Documentos</h4><p>Obrigatório: Cartão do SUS, RG, CPF e Comprovante de Residência no nome do paciente ou familiar de 1º grau.</p></div></div>
+                    <div class="passo-item"><div class="passo-numero">2</div><div class="passo-conteudo"><h4>Vá à Recepção da USF</h4><p>Dirija-se à Unidade de Saúde da Família. Chegue cedo, pois as senhas começam a ser distribuídas às <strong>07:00h</strong>.</p></div></div>
+                    <div class="passo-item"><div class="passo-numero">3</div><div class="passo-conteudo"><h4>Acolhimento</h4><p>Se for caso de dor aguda ou sintomas, informe na recepção para passar por uma triagem com a enfermagem antes.</p></div></div>
+                </div>
+
+                <div id="GuiaSalDigital" class="sub-tab-content passo-a-passo" style="border-top: 4px solid #0056b3;">
+                    <h3 style="color: #0056b3; margin-bottom: 15px;">Agendamento via Salvador Digital</h3>
+                    <div class="passo-item"><div class="passo-numero" style="background-color: #0056b3;">1</div><div class="passo-conteudo"><h4>Acesse o sistema</h4><p>Baixe o aplicativo <strong>Salvador Digital</strong> ou acesse o site oficial da prefeitura.</p></div></div>
+                    <div class="passo-item"><div class="passo-numero" style="background-color: #0056b3;">2</div><div class="passo-conteudo"><h4>Faça o Login</h4><p>Utilize seu CPF e senha do portal Gov.br para entrar.</p></div></div>
+                    <div class="passo-item"><div class="passo-numero" style="background-color: #0056b3;">3</div><div class="passo-conteudo"><h4>Agende o Serviço</h4><p>Vá em "Agendamento Saúde" ou serviços de Prefeituras-Bairro. Escolha a data, horário e confirme o protocolo.</p></div></div>
+                    <a href="https://salvadordigital.salvador.ba.gov.br/" target="_blank" class="btn-agendamento btn-secundario" style="width: max-content; padding: 10px 20px; margin-top: 10px;">Acessar Salvador Digital</a>
+                </div>
+
+                <div id="GuiaVidaCidadao" class="sub-tab-content passo-a-passo" style="border-top: 4px solid #17a2b8;">
+                    <h3 style="color: #17a2b8; margin-bottom: 15px;">Como usar o Vida+ Cidadão</h3>
+                    <div class="passo-item"><div class="passo-numero" style="background-color: #17a2b8;">1</div><div class="passo-conteudo"><h4>Baixe o Aplicativo</h4><p>Busque por "Vida+ Cidadão" na loja de aplicativos e instale.</p></div></div>
+                    <div class="passo-item"><div class="passo-numero" style="background-color: #17a2b8;">2</div><div class="passo-conteudo"><h4>Faça o Cadastro</h4><p>Insira seus dados pessoais para exibir o cartão virtual do SUS.</p></div></div>
+                    <div class="passo-item"><div class="passo-numero" style="background-color: #17a2b8;">3</div><div class="passo-conteudo"><h4>Libere Acesso Completo</h4><p>Para ver seu histórico clínico, vá presencialmente a um posto de saúde validar o acesso.</p></div></div>
+                    <a href="https://play.google.com/store/apps/details?id=br.gov.ba.salvador.saude.vida.cidadao.app2&hl=pt_BR" target="_blank" class="btn-agendamento" style="background-color: #17a2b8; width: max-content; padding: 10px 20px; margin-top: 10px;">Baixar Vida+ Cidadão</a>
+                </div>
+
+                <div id="GuiaConecteSUS" class="sub-tab-content passo-a-passo" style="border-top: 4px solid #28a745;">
+                    <h3 style="color: #28a745; margin-bottom: 15px;">Acesso ao Meu SUS Digital</h3>
+                    <div class="passo-item"><div class="passo-numero" style="background-color: #28a745;">1</div><div class="passo-conteudo"><h4>Baixe ou Acesse</h4><p>Baixe o aplicativo "Meu SUS Digital" ou acesse pelo navegador.</p></div></div>
+                    <div class="passo-item"><div class="passo-numero" style="background-color: #28a745;">2</div><div class="passo-conteudo"><h4>Login Único Gov.br</h4><p>O acesso é feito exclusivamente com o seu CPF e a senha gov.br.</p></div></div>
+                    <div class="passo-item"><div class="passo-numero" style="background-color: #28a745;">3</div><div class="passo-conteudo"><h4>Funcionalidades</h4><p>Acesse sua carteira de vacinação nacional e laudos de exames laboratoriais.</p></div></div>
+                    <a href="https://meususdigital.saude.gov.br/" target="_blank" class="btn-agendamento btn-terciario" style="width: max-content; padding: 10px 20px; margin-top: 10px;">Acessar Meu SUS Digital</a>
+                </div>
+
+                <h3 class="subtitulo">📍 Mapa e Contato das Unidades Locais</h3>
+                <div class="info-grid">
+                    <div class="info-card destaque">
+                        <h3>Centro Social Urbano (CSU)</h3>
+                        <p>Foco em vacinação, curativos e serviços sociais.</p>
+                        <div class="contato-info"><strong>Endereço:</strong> Rua Thomaz Gonzaga, 150 - Pernambués.<br><strong>Telefone:</strong> (71) 3116-4658</div>
+                        <div class="mapa-container"><iframe src="https://maps.google.com/maps?q=Centro+Social+Urbano+Pernambues+Salvador&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe></div>
+                    </div>
+                    <div class="info-card destaque">
+                        <h3>USF Edson Teixeira (Pernambués)</h3>
+                        <p>Atendimento de saúde da família e marcação de consultas.</p>
+                        <div class="contato-info"><strong>Endereço:</strong> Rua Thomaz Gonzaga - Pernambués.<br><strong>Telefone:</strong> (71) 3032-4634</div>
+                        <div class="mapa-container"><iframe src="https://maps.google.com/maps?q=USF+Edson+Teixeira+Pernambues+Salvador&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Saude da mulher e do homem -->
+            <div id="SaudeMulherHomem" class="tab-content">
+                <h2 class="secao-titulo">Prevenção e Cuidado Contínuo</h2>
+                
+                <div class="sub-tab-menu">
+                    <button class="sub-tab-button-saude active-mulher" onclick="abrirSubAbaSaude(event, 'TabMulher', 'active-mulher')">👩 Saúde da Mulher</button>
+                    <button class="sub-tab-button-saude" onclick="abrirSubAbaSaude(event, 'TabHomem', 'active-homem')">👨 Saúde do Homem</button>
+                    <button class="sub-tab-button-saude" onclick="abrirSubAbaSaude(event, 'TabCampanhas', 'active-campanha')">🎗️ Campanhas (Rosa e Azul)</button>
+                </div>
+
+                <div id="TabMulher" class="sub-tab-content-saude" style="display: block;">
+                    <div class="info-grid">
+                        <div class="info-card" style="border-left-color: #e83e8c;">
+                            <h3>🩺 Prevenção e Exames (Na USF)</h3>
+                            <ul>
+                                <li><strong>Preventivo (Papanicolau):</strong> Rastreio precoce do cancro do colo do útero. Agendamento disponível na USF Edson Teixeira.</li>
+                                <li><strong>Mamografia:</strong> Encaminhamento rápido para mulheres a partir dos 50 anos ou com histórico familiar.</li>
+                                <li><strong>Testes Rápidos:</strong> Realização de exames de Sífilis, HIV e Hepatites com resultado na hora.</li>
+                            </ul>
+                        </div>
+                        <div class="info-card" style="border-left-color: #e83e8c;">
+                            <h3>🤰 Planeamento e Gestação</h3>
+                            <ul>
+                                <li><strong>Pré-natal Completo:</strong> Acompanhamento médico e de enfermagem para gestações de baixo risco, com marcação de ultrassons.</li>
+                                <li><strong>Planeamento Familiar:</strong> Fornecimento de pílulas, injeções contracetivas e preservativos. Encaminhamento para inserção de DIU ou laqueação.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="info-card" style="border-left-color: #e83e8c; grid-column: 1 / -1; background-color: #fdf5f8;">
+                            <h3 style="color: #e83e8c;">🏥 Hospital da Mulher (Referência Estadual)</h3>
+                            <p>Para casos de maior complexidade que não podem ser resolvidos no posto de saúde, a paciente é encaminhada para o <strong>Hospital da Mulher Maria Luzia Costa dos Santos</strong> (localizado no Largo de Roma). O agendamento inicial para lá é feito através do sistema <strong>Lista Única</strong>, solicitado pelo próprio médico da USF Edson Teixeira.</p>
+                            <ul style="margin-top: 15px;">
+                                <li><strong>Especialidades Atendidas:</strong> Ginecologia cirúrgica, mastologia, oncologia, endometriose e reprodução humana.</li>
+                                <li><strong>Serviço AME (Vítimas de Violência):</strong> O Serviço de Atenção às Mulheres Expostas à Violência Sexual funciona 24 horas por dia, 7 dias por semana, <strong>sem necessidade de agendamento prévio</strong> ou boletim de ocorrência.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="TabHomem" class="sub-tab-content-saude">
+                    <div class="info-grid">
+                        <div class="info-card" style="border-left-color: #007bff;">
+                            <h3>🩺 Prevenção e Avaliação</h3>
+                            <ul>
+                                <li><strong>Avaliação da Próstata:</strong> Consultas de rotina para solicitar o exame de PSA (sangue) e encaminhamento para urologista a partir dos 50 anos.</li>
+                            </ul>
+                        </div>
+                        <div class="info-card" style="border-left-color: #007bff;">
+                            <h3>🛡️ Proteção e Saúde Geral</h3>
+                            <ul>
+                                <li><strong>Testes de ISTs:</strong> Acesso rápido e sigiloso a testes de HIV, Sífilis e Hepatites B e C no posto de saúde.</li>
+                                <li><strong>Preservativos Gratuitos:</strong> Estão sempre disponíveis em expositores nas unidades de saúde, basta chegar e levar.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="TabCampanhas" class="sub-tab-content-saude">
+                    <div class="info-grid">
+                        <div class="info-card" style="background-color: #fde8f3; border-left-color: #e83e8c;">
+                            <h3 style="color: #e83e8c;">🌸 Outubro Rosa</h3>
+                            <p style="margin-top: 10px;">Durante o mês de outubro, a USF Edson Teixeira realiza mutirões especiais focados na saúde da mulher. São abertas vagas extras para exames preventivos (Papanicolau) e ocorre uma facilitação no agendamento de mamografias de rastreio.</p>
+                        </div>
+                        <div class="info-card" style="background-color: #e6f2ff; border-left-color: #007bff;">
+                            <h3 style="color: #007bff;">💙 Novembro Azul</h3>
+                            <p style="margin-top: 10px;">Em novembro, as unidades focam em combater o preconceito e encorajar os homens a cuidarem da saúde. Acontecem dias "D" com horários flexíveis para que trabalhadores possam ir à unidade realizar exames de sangue (PSA) e aferição de pressão.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Saude mental e Bem-estar -->
+            <div id="SaudeMental" class="tab-content">
+                <h2 class="secao-titulo">Saúde Mental e Apoio Psicológico</h2>
+                
+                <div class="estatistica-box" style="margin-bottom: 25px; border-left-color: var(--verde-mental);">
+                    <span><strong>Você não está sozinho:</strong> 10,5% da nossa comunidade realiza acompanhamento contínuo para ansiedade ou depressão. O SUS dispõe de canais de escuta e tratamento gratuitos.</span>
+                </div>
+
+                <div class="sub-tab-menu">
+                    <button class="sub-tab-button-mental active-acolhimento" onclick="abrirSubAbaMental(event, 'TabAcolhimento', 'active-acolhimento')">🤝 Primeiro Passo (USF)</button>
+                    <button class="sub-tab-button-mental" onclick="abrirSubAbaMental(event, 'TabCaps', 'active-caps')">🏥 Apoio Especializado (CAPS)</button>
+                    <button class="sub-tab-button-mental" onclick="abrirSubAbaMental(event, 'TabBemEstar', 'active-bemestar')">🌱 Bem-Estar e Ansiedade</button>
+                </div>
+
+                <div id="TabAcolhimento" class="sub-tab-content-mental" style="display: block;">
+                    <div class="info-grid">
+                        <div class="info-card" style="border-left-color: var(--verde-mental);">
+                            <h3 style="color: var(--verde-mental);">Escuta Qualificada</h3>
+                            <p>O primeiro passo para procurar ajuda é dirigir-se à USF Edson Teixeira. A equipa de enfermagem e assistência social está preparada para o "Acolhimento", uma conversa inicial sem julgamentos para compreender as suas necessidades emocionais. <strong>Após a conversa inicial, peça um acompanhamento psicológico mensal.</strong></p>
+                        </div>
+                        <div class="info-card" style="border-left-color: var(--verde-mental);">
+                            <h3 style="color: var(--verde-mental);">Médico de Família</h3>
+                            <p>Após a escuta, poderá ser direcionado para o médico clínico da unidade. Ele pode iniciar o tratamento para casos leves a moderados de ansiedade e depressão, incluindo a prescrição de medicamentos, se necessário.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card" style="border-left-color: #dc3545; background-color: #f8d7da; margin-top: 1.5rem;">
+                        <h3 style="color: #721c24;">🚨 Emergências Psiquiátricas</h3>
+                        <p style="color: #721c24; margin-top: 10px;">Em casos de emergência de saúde mental (crises agudas, episódios severos ou risco à própria vida), procure imediatamente uma <strong>UPA</strong>, a <strong>UBS</strong> mais próxima, ou os <strong>centros de emergência de hospitais psiquiátricos</strong>.</p>
+                    </div>
+                </div>
+
+                <div id="TabCaps" class="sub-tab-content-mental">
+                    <div class="info-grid">
+                        <div class="info-card" style="border-left-color: var(--roxo-caps);">
+                            <h3 style="color: var(--roxo-caps);">O que é o CAPS?</h3>
+                            <p>Os Centros de Atenção Psicossocial (CAPS) são unidades especializadas em saúde mental para tratar casos graves e persistentes. O encaminhamento para o CAPS da região é feito pela própria USF após avaliação.</p>
+                            <ul style="margin-top: 15px;">
+                                <li>Consultas com psiquiatras e psicólogos.</li>
+                                <li>Oficinas terapêuticas e de arte.</li>
+                                <li>Atividades de reinserção social e apoio às famílias.</li>
+                            </ul>
+                        </div>
+                        <div class="info-card" style="border-left-color: var(--roxo-caps);">
+                            <h3 style="color: var(--roxo-caps);">Tipos Específicos de CAPS</h3>
+                            <p>Além do atendimento geral, existem unidades especializadas:</p>
+                            <ul style="margin-top: 10px;">
+                                <li><strong>CAPSi (Infanto-Juvenil):</strong> Focado no atendimento de crianças e adolescentes com sofrimento psíquico intenso ou transtornos mentais graves.</li>
+                                <li><strong>CAPSad (Álcool e Drogas):</strong> Especializado no atendimento de pessoas de todas as idades com necessidades decorrentes do uso prejudicial de álcool e outras drogas.</li>
+                                <li><strong>CAPSad III:</strong> Unidade de Álcool e Drogas com funcionamento 24 horas, incluindo suporte noturno e acolhimento de urgência/crise.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="TabBemEstar" class="sub-tab-content-mental">
+                    <div class="info-grid">
+                        <div class="info-card" style="border-left-color: var(--azul-bemestar);">
+                            <h3 style="color: var(--azul-bemestar);">Atividades Comunitárias (CSU)</h3>
+                            <p>A saúde mental também passa pelo convívio social. O Centro Social Urbano (CSU) de Pernambués oferece frequentemente espaços de convivência, atividades físicas e artísticas que ajudam a reduzir o stress e promovem a qualidade de vida.</p>
+                        </div>
+                        <div class="info-card" style="border-left-color: var(--azul-bemestar);">
+                            <h3 style="color: var(--azul-bemestar);">Práticas Integrativas</h3>
+                            <p>Muitas unidades do SUS em Salvador oferecem Práticas Integrativas e Complementares (PICs), como acupuntura, meditação e terapia comunitária. Consulte a receção da sua unidade para saber quais os grupos e atividades disponíveis.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="subtitulo" style="margin-top: 2rem; color: var(--preto); font-size: 1.3rem;">Técnicas Práticas para Lidar com a Ansiedade</h3>
+                    <p style="margin-bottom: 15px;">Em momentos de crise ou nervosismo elevado, algumas práticas podem ajudar a trazer a mente de volta ao presente e acalmar o corpo. <em>Nota: Estas dicas auxiliam no dia a dia, mas não substituem o acompanhamento médico e psicológico.</em></p>
+
+                    <div class="info-grid">
+                        <div class="passo-a-passo" style="border-top: 4px solid var(--azul-bemestar);">
+                            <h4 style="color: var(--azul-bemestar); margin-bottom: 10px; font-size: 1.1rem;">🌬️ Respiração Profunda (Técnica 4-7-8)</h4>
+                            <p style="margin-bottom: 10px;">Ajuda a reduzir os batimentos cardíacos e acalmar o sistema nervoso rapidamente:</p>
+                            <ol style="margin-left: 20px; color: var(--texto);">
+                                <li>Inspire calmamente pelo nariz contando mentalmente até <strong>4</strong>.</li>
+                                <li>Prenda a respiração e mantenha o ar nos pulmões contando até <strong>7</strong>.</li>
+                                <li>Expire lentamente pela boca (fazendo um som suave) contando até <strong>8</strong>.</li>
+                                <li>Repita o ciclo de 3 a 4 vezes.</li>
+                            </ol>
+                        </div>
+
+                        <div class="passo-a-passo" style="border-top: 4px solid var(--azul-bemestar);">
+                            <h4 style="color: var(--azul-bemestar); margin-bottom: 10px; font-size: 1.1rem;">🖐️ Técnica de Enraizamento (5-4-3-2-1)</h4>
+                            <p style="margin-bottom: 10px;">Útil para desviar o foco de pensamentos acelerados. Olhe à sua volta e identifique em voz alta ou mentalmente:</p>
+                            <ul style="margin-left: 20px; color: var(--texto);">
+                                <li><strong>5</strong> coisas que você pode ver.</li>
+                                <li><strong>4</strong> coisas que você pode tocar.</li>
+                                <li><strong>3</strong> coisas que você pode ouvir.</li>
+                                <li><strong>2</strong> coisas que você pode cheirar.</li>
+                                <li><strong>1</strong> coisa que você pode saborear.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Crianças e Idosos -->
+            <div id="CriancasIdosos" class="tab-content">
+                <h2 class="secao-titulo">Cuidado nas Fases da Vida</h2>
+                
+                <div class="estatistica-box" style="margin-bottom: 25px; border-left-color: var(--azul-crianca);">
+                    <span><strong>36,8%</strong> dos participantes da pesquisa pediram foco neste tema. Acompanhe abaixo os serviços essenciais para crianças e idosos nas unidades de Pernambués.</span>
+                </div>
+
+                <div class="sub-tab-menu">
+                    <button class="sub-tab-button-idade active-crianca" onclick="abrirSubAbaIdade(event, 'TabCrianca', 'active-crianca')">👶 Saúde da Criança</button>
+                    <button class="sub-tab-button-idade" onclick="abrirSubAbaIdade(event, 'TabIdoso', 'active-idoso')">👴 Saúde do Idoso</button>
+                    <button class="sub-tab-button-idade" onclick="abrirSubAbaIdade(event, 'TabVacinaIdade', 'active-vacina')">💉 Vacinação e Campanhas</button>
+                </div>
+
+                <div id="TabCrianca" class="sub-tab-content-idade" style="display: block;">
+                    <div class="info-grid">
+                        <div class="info-card" style="border-left-color: var(--azul-crianca);">
+                            <h3 style="color: var(--azul-crianca);">Acompanhamento (Puericultura)</h3>
+                            <p>As consultas de puericultura na USF Edson Teixeira são fundamentais para acompanhar o crescimento da criança. O médico ou enfermeiro avaliará o peso, a altura e os marcos de desenvolvimento cognitivo e motor desde os primeiros dias de vida.</p>
+                        </div>
+                        <div class="info-card" style="border-left-color: var(--azul-crianca);">
+                            <h3 style="color: var(--azul-crianca);">Primeiros Cuidados</h3>
+                            <ul>
+                                <li><strong>Teste do Pezinho:</strong> Realizado gratuitamente nos primeiros dias de vida da criança na unidade de saúde, essencial para detetar doenças genéticas e metabólicas.</li>
+                                <li><strong>Caderneta da Criança:</strong> Documento obrigatório que deve ser levado a todas as consultas para registo de peso e vacinas.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="TabIdoso" class="sub-tab-content-idade">
+                    <div class="info-grid">
+                        <div class="info-card" style="border-left-color: var(--roxo-idoso);">
+                            <h3 style="color: var(--roxo-idoso);">Saúde Respiratória e Mobilidade</h3>
+                            <p>Com o avanço da idade, a atenção às vias respiratórias deve ser redobrada. O posto de saúde oferece acompanhamento contínuo para condições crónicas como asma e bronquite.</p>
+                            <p style="margin-top: 10px;">Além disso, os profissionais orientam familiares e cuidadores sobre a prevenção de quedas e manutenção da mobilidade dentro de casa.</p>
+                        </div>
+                        <div class="info-card" style="border-left-color: var(--roxo-idoso);">
+                            <h3 style="color: var(--roxo-idoso);">Dispensação de Materiais e Receitas</h3>
+                            <ul>
+                                <li><strong>Farmácia Básica:</strong> Renovação de receitas de uso contínuo e levantamento gratuito de medicamentos essenciais no CSU ou USF.</li>
+                                <li><strong>Fraldas Geriátricas:</strong> Pacientes acamados ou com dificuldades de locomoção podem ser inseridos no programa de distribuição (consulte a receção com o Cartão SUS e laudo médico).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="TabVacinaIdade" class="sub-tab-content-idade">
+                    <div class="info-grid">
+                        <div class="info-card" style="border-left-color: var(--verde-vacina);">
+                            <h3 style="color: var(--verde-vacina);">Vacinação de Rotina (Infantil)</h3>
+                            <p>A imunização básica (como a BCG, Poliomielite, Tríplice Viral e Pentavalente) está disponível de <strong>segunda a sexta-feira, das 08h às 16h</strong>, principalmente no Centro Social Urbano (CSU).</p>
+                            <p style="margin-top: 10px; color: #d9534f; font-weight: bold;">Atenção: É estritamente obrigatório apresentar a Caderneta de Vacinação da criança.</p>
+                        </div>
+                        <div class="info-card" style="border-left-color: var(--verde-vacina);">
+                            <h3 style="color: var(--verde-vacina);">Vacinação Sazonal (Idosos)</h3>
+                            <p>A terceira idade é o grupo prioritário nas grandes campanhas nacionais de imunização. Fique atento aos calendários anuais para:</p>
+                            <ul style="margin-top: 10px;">
+                                <li><strong>Vacina da Gripe (Influenza):</strong> Protege contra as complicações respiratórias no inverno.</li>
+                                <li><strong>Vacina contra a Covid-19:</strong> Doses de reforço anuais disponíveis nos postos.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/script.js"></script> 
+
+</body>
+</html>
+```<ElicitationsGroup>
+</ElicitationsGroup>

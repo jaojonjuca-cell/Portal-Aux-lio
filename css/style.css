@@ -1,0 +1,243 @@
+:root {
+    --laranja: #f37021;
+    --laranja-escuro: #d95e1a;
+    --preto: #1a1a1a;
+    --preto-suave: #2b2b2b;
+    --branco: #ffffff;
+    --amarelo: #ffc107;
+    --fundo: #f4f5f7;
+    --texto: #333333;
+    --borda: #e0e0e0;
+    
+    /* Cores Saúde Mental */
+    --verde-mental: #28a745;
+    --roxo-caps: #6f42c1;
+    --azul-bemestar: #17a2b8;
+
+    /* Cores Idades */
+    --azul-crianca: #00a8cc;
+    --roxo-idoso: #8c52ff;
+    --verde-vacina: #20c997;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--fundo);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--preto);
+    color: var(--branco);
+    padding: 2rem 0;
+    text-align: center;
+    border-bottom: 6px solid var(--laranja);
+}
+
+header h1 {
+    color: var(--laranja);
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 20px;
+}
+
+.tab-container {
+    background: var(--branco);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.tab-menu {
+    display: flex;
+    background-color: var(--preto-suave);
+    flex-wrap: wrap;
+}
+
+.tab-button {
+    background-color: inherit;
+    color: var(--branco);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 16px 20px;
+    transition: 0.3s;
+    font-size: 1rem;
+    font-weight: bold;
+    flex-grow: 1;
+    text-align: center;
+    border-bottom: 4px solid transparent;
+}
+
+.tab-button:hover { background-color: #3d3d3d; }
+.tab-button.active {
+    background-color: var(--branco);
+    color: var(--preto);
+    border-bottom: 4px solid var(--laranja);
+}
+
+.tab-content {
+    display: none;
+    padding: 2.5rem;
+    animation: fadeEffect 0.5s;
+}
+
+.sub-tab-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--borda);
+    padding-bottom: 15px;
+}
+
+.sub-tab-button, .sub-tab-button-saude, .sub-tab-button-mental, .sub-tab-button-idade {
+    background-color: var(--fundo);
+    color: var(--texto);
+    border: 1px solid var(--borda);
+    outline: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 6px;
+    transition: 0.3s;
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+
+.sub-tab-button:hover, .sub-tab-button-saude:hover, .sub-tab-button-mental:hover, .sub-tab-button-idade:hover {
+    background-color: #e9ecef;
+}
+
+.sub-tab-button.active { background-color: var(--laranja); color: var(--branco); border-color: var(--laranja); }
+.sub-tab-button-saude.active-mulher { background-color: #e83e8c; color: var(--branco); border-color: #e83e8c; }
+.sub-tab-button-saude.active-homem { background-color: #007bff; color: var(--branco); border-color: #007bff; }
+.sub-tab-button-saude.active-campanha { background-color: var(--preto); color: var(--branco); border-color: var(--preto); }
+.sub-tab-button-mental.active-acolhimento { background-color: var(--verde-mental); color: var(--branco); border-color: var(--verde-mental); }
+.sub-tab-button-mental.active-caps { background-color: var(--roxo-caps); color: var(--branco); border-color: var(--roxo-caps); }
+.sub-tab-button-mental.active-bemestar { background-color: var(--azul-bemestar); color: var(--branco); border-color: var(--azul-bemestar); }
+.sub-tab-button-idade.active-crianca { background-color: var(--azul-crianca); color: var(--branco); border-color: var(--azul-crianca); }
+.sub-tab-button-idade.active-idoso { background-color: var(--roxo-idoso); color: var(--branco); border-color: var(--roxo-idoso); }
+.sub-tab-button-idade.active-vacina { background-color: var(--verde-vacina); color: var(--branco); border-color: var(--verde-vacina); }
+
+.sub-tab-content, .sub-tab-content-saude, .sub-tab-content-mental, .sub-tab-content-idade {
+    display: none;
+    animation: fadeEffect 0.5s;
+}
+
+@keyframes fadeEffect { from {opacity: 0;} to {opacity: 1;} }
+
+.secao-titulo {
+    color: var(--laranja);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    border-bottom: 2px solid var(--fundo);
+    padding-bottom: 10px;
+}
+
+.subtitulo {
+    margin-top: 2.5rem; 
+    margin-bottom: 1.5rem; 
+    color: var(--preto); 
+    border-bottom: 2px solid var(--borda); 
+    padding-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 1.5rem;
+}
+
+.info-card {
+    background: var(--fundo);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--preto);
+}
+
+.info-card.destaque { border-left-color: var(--laranja); }
+.info-card.alerta { border-left-color: var(--amarelo); }
+
+.info-card h3 {
+    color: var(--preto);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.2rem;
+}
+
+.info-card ul { list-style: none; }
+.info-card ul li {
+    margin-bottom: 10px;
+    padding-left: 24px;
+    position: relative;
+}
+.info-card ul li::before {
+    content: "•";
+    color: var(--laranja);
+    font-weight: bold;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -4px;
+}
+
+.passo-a-passo { background-color: var(--branco); border: 1px solid var(--borda); border-radius: 8px; padding: 1.5rem; }
+.passo-item { display: flex; margin-bottom: 1.5rem; align-items: flex-start; }
+.passo-item:last-child { margin-bottom: 0; }
+.passo-numero {
+    background-color: var(--laranja); color: var(--branco); width: 35px; height: 35px;
+    border-radius: 50%; display: flex; justify-content: center; align-items: center;
+    font-weight: bold; font-size: 1.2rem; flex-shrink: 0; margin-right: 15px; margin-top: 2px;
+}
+.passo-conteudo h4 { color: var(--preto); margin-bottom: 5px; font-size: 1.1rem; }
+.passo-conteudo p { font-size: 0.95rem; color: var(--texto); }
+
+.estatistica-box {
+    background-color: var(--preto);
+    color: var(--branco);
+    padding: 1rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-left: 5px solid var(--amarelo);
+}
+
+.estatistica-box strong { color: var(--amarelo); font-size: 1.2rem; }
+
+.btn-agendamento {
+    display: block; text-align: center; background-color: var(--laranja); color: var(--branco);
+    text-decoration: none; padding: 12px; border-radius: 5px; font-weight: bold;
+    margin-top: 15px; transition: background 0.3s;
+}
+
+.btn-agendamento:hover { background-color: var(--laranja-escuro); }
+.btn-secundario { background-color: #0056b3; }
+.btn-secundario:hover { background-color: #004494; }
+.btn-terciario { background-color: #28a745; }
+.btn-terciario:hover { background-color: #218838; }
+
+.mapa-container { width: 100%; height: 250px; margin-top: 15px; border-radius: 6px; overflow: hidden; border: 1px solid var(--borda); }
+iframe { width: 100%; height: 100%; border: none; }
+.contato-info { background: var(--branco); padding: 10px; border-radius: 4px; margin-top: 10px; border: 1px solid var(--borda); }
